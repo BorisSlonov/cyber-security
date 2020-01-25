@@ -202,18 +202,6 @@ button {
   font-style: italic;
 }
 
-.main {
-  background-image: url(../img/bg.png);
-  background-color: rgba(0, 0, 0, 0.767);
-  background-repeat: no-repeat;
-  height: 100%;
-  width: 100%;
-  padding-top: 80px;
-  background-size: cover;
-  position: relative;
-  z-index: 2;
-}
-
 .header {
   position: fixed;
   width: 100%;
@@ -275,6 +263,10 @@ button {
   margin-left: 20px;
 }
 
+.header__list li:last-child {
+  margin-left: 150px;
+}
+
 .header__link {
   font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.853);
@@ -294,7 +286,46 @@ button {
   display: none;
 }
 
+@media (max-width: 1120px) {
+  .header__list li:last-child {
+    margin-left: 140px;
+  }
+}
+
+@media (max-width: 1070px) {
+  .header__list li:last-child {
+    margin-left: 120px;
+  }
+}
+
+@media (max-width: 1040px) {
+  .header__list li:last-child {
+    margin-left: 100px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .header__list li:last-child {
+    margin-left: 80px;
+  }
+}
+
+@media (max-width: 960px) {
+  .header__list li:last-child {
+    margin-left: 50px;
+  }
+}
+
+@media (max-width: 910px) {
+  .header__list li:last-child {
+    margin-left: 20px;
+  }
+}
+
 .logo-img {
+  position: absolute;
+  top: 0;
+  left: -7px;
   max-width: 160px;
   border-radius: 5px;
 }
@@ -428,27 +459,55 @@ button {
             align-items: center;
   }
   .header-btn-group .signUp {
-    margin: 0;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 412px) {
+  .header-btn-group {
+    margin-left: 15px;
+    margin-right: 35px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
   }
   .header-btn-group .signIn {
-    margin-top: 10px;
+    margin-top: 5px;
   }
+}
+
+.main {
+  background-image: url(../img/bg.png);
+  background-color: rgba(0, 0, 0, 0.767);
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  padding-top: 80px;
+  background-size: cover;
+  position: relative;
+  z-index: 2;
 }
 
 .header-content {
   height: 100%;
   position: relative;
   z-index: 10;
+  padding-bottom: 50px;
 }
 
 .header-content h1 {
   position: relative;
   color: #27AE60;
-  text-align: left;
+  text-align: center;
   font-weight: 200;
   font-size: 3.4rem;
   margin-top: 50px;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
   line-height: 1.5;
   text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
   font-family: 'Raleway'sans-serif;
@@ -460,7 +519,7 @@ button {
 .header-content h1:before {
   content: '';
   position: absolute;
-  background-image: url(../img/К.png);
+  background-image: url(../img/H.png);
   background-repeat: no-repeat;
   background-size: contain;
   width: 100%;
@@ -501,25 +560,38 @@ button {
 }
 
 .header-content-container__text p:first-child {
-  padding-top: 25px;
-  line-height: 1.5;
-  text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.12);
-  font-family: Raleway;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 1rem;
-}
-
-.header-content-container__text p {
+  margin-top: 70px;
   font-family: Raleway;
   font-style: normal;
   font-weight: normal;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  font-size: 17px;
-  font-weight: 200;
-  margin-top: 20px;
-  letter-spacing: .9px;
-  line-height: 1.5;
+  font-size: 15px;
+  line-height: 18px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.header-content-container__text p:not(first-child) {
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 18px;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 25px 0;
+}
+
+.header-content-container__text p:last-child {
+  margin-bottom: 70px;
+}
+
+.header-content-container .about-img {
+  text-align: center;
+  margin: 20px 0;
+  width: 100%;
+}
+
+.header-content-container .about-img img {
+  width: 100%;
+  max-width: 650px;
 }
 
 .header-content-container__form {
@@ -634,6 +706,208 @@ button {
         flex-basis: 100%;
     margin-top: 15px;
   }
+}
+
+.news-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 25px;
+  padding-bottom: 25px;
+}
+
+.news-item__img {
+  -ms-flex-preferred-size: 32%;
+      flex-basis: 32%;
+  margin-top: 5px;
+}
+
+.news-item__img img {
+  width: 100%;
+  max-width: 550px;
+}
+
+.news-item__text {
+  -ms-flex-preferred-size: 60%;
+      flex-basis: 60%;
+  padding-left: 30px;
+}
+
+.news-item__text h3 {
+  margin-bottom: 25px;
+}
+
+.news-item__text h3 span {
+  border-bottom: 3px solid #27ae5f;
+  padding-bottom: 5px;
+  font-size: 1.5rem;
+}
+
+.news-item__text p {
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: rgba(255, 255, 255, 0.8) ƒ;
+}
+
+@media (max-width: 768px) {
+  .news-item {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .news-item__img img {
+    width: 100%;
+    max-width: 50%;
+    max-width: 350px;
+  }
+  .news-item__text {
+    padding-left: 0;
+    margin-top: 20px;
+  }
+  .news-item__text p {
+    font-size: 13px;
+  }
+}
+
+.btn-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 15px;
+}
+
+.btn-container__news {
+  border: 1px solid #27ae5f;
+  margin-right: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 81px;
+  height: 30px;
+  border-radius: 2px;
+  -webkit-transition: all .6s;
+  transition: all .6s;
+}
+
+.btn-container__news:hover {
+  background-color: #27ae5f;
+}
+
+.btn-container__post {
+  border: 1px solid #27ae5f;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 10px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 81px;
+  height: 30px;
+  border-radius: 2px;
+  -webkit-transition: all .6s;
+  transition: all .6s;
+}
+
+.btn-container__post:hover {
+  background-color: #27ae5f;
+}
+
+.btn-container .news-sort {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.btn-container .news-sort span {
+  border-bottom: 1px solid #27ae5f;
+}
+
+.btn-container .news-sort img {
+  margin-right: 5px;
+}
+
+.btn-under {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.btn-under a {
+  border: 1px solid #27ae5f;
+  margin-right: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 141px;
+  height: 40px;
+  border-radius: 2px;
+  -webkit-transition: all .6s;
+  transition: all .6s;
+  position: relative;
+  padding-right: 10px;
+  margin-right: 20px;
+}
+
+.btn-under a:hover {
+  background-color: #27ae5f;
+}
+
+.btn-under a:after {
+  content: '';
+  position: absolute;
+  background-image: url(../img/sortDown.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 10px;
+  height: 10px;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  right: 5px;
+}
+
+.stat {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 200px;
+}
+
+.border-green {
+  border-bottom: 1px solid #27ae5f;
+  padding-top: 30px;
 }
 
 .footer {
